@@ -1,4 +1,5 @@
 "use client";
+
 // React
 import { FC } from "react";
 // Styles
@@ -15,7 +16,7 @@ import { Tooltip } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
 export const Footer: FC = ({}) => {
   const pathName = usePathname().replace("/", "");
-  let hideFooter = pathName === "login" || pathName === "dashboard";
+  const hideFooter = pathName === "login" || pathName === "dashboard";
   const getFullYear = new Date().getFullYear();
   const DATA_LINKS = [
     { value: "Features", href: "features" },
