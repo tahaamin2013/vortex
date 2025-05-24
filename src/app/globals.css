@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+/* @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -65,4 +65,37 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+ */
+
+ /* keyframes must be imported manually or included directly in this file */
+/* Tailwind base and utilities should be linked via CDN or PostCSS setup */
+
+/* Styles previously nested inside html > body */
+html body .navbarMenu {
+    opacity: 0;
+    animation: navbarMenu 0.1s ease forwards;
+}
+
+html body .container {
+    width: min(100% - 40px, 1220px);
+    margin-inline: auto;
+}
+
+html body .app {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+/* Scrollbar styles */
+html body::-webkit-scrollbar {
+    background-color: #fff;
+    width: 10px;
+}
+
+html body::-webkit-scrollbar-thumb {
+    background-color: rgba(204, 204, 204, 1); /* rgba for #ccc with full opacity */
+    border-radius: 10px;
+    border: 2px solid #fff;
 }

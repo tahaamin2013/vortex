@@ -1,109 +1,163 @@
-"use client"
+"use client";
+// React
+import { FC, useState } from "react";
+// Authentication
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+// Styles
+import s from "./styles/SignIn.module.scss";
+// Icons
+import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
+import { GoArrowRight } from "react-icons/go";
+// Next
+import Image from "next/image";
+import Link from "next/link";
 
-import { signIn } from "next-auth/react"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { useState } from "react"
+// NextUI
+import { Input, Button } from "@nextui-org/react";
+// Font
+import { Lexend } from "next/font/google";
+const font = Lexend({
+  subsets: ["latin"],
+  weight: ["500"],
+});
 
-export default function LoginPage() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [error, setError] = useState("")
-  const [loading, setLoading] = useState(false)
-  const router = useRouter()
+const SignIn: FC = ({}) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError("")
-    setLoading(true)
+    e.preventDefault();
+    setError("");
+    setLoading(true);
 
     try {
       const result = await signIn("credentials", {
         email,
         password,
         redirect: false,
-      })
+      });
 
       if (result?.error) {
-        setError("Invalid email or password")
+        setError("Invalid email or password");
       } else {
         // Redirect to dashboard or home page
-        router.push("/dashboard")
-        router.refresh()
+        router.push("/dashboard");
+        router.refresh();
       }
     } catch (error) {
-      setError("An error occurred. Please try again.")
-      console.error("Login error:", error)
+      setError("An error occurred. Please try again.");
+      console.error("Login error:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to Vortex
-          </h2>
-        </div>
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          <div className="rounded-md shadow-sm -space-y-px">
-            <div>
-              <label htmlFor="email-address" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="email-address"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div>
-              <label htmlFor="password" className="sr-only">
-                Password
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-          </div>
+    <section
+      className={`${s.signIn} w-full h-screen md:bg-[url('/bgSignIn.svg')]  bg-no-repeat bg-center bg-cover`}
+    >
+      <section className={`${s.wrapper}  `}>
+        <div
+          className={`${s.wrapperForm} h-screen bg-white px-5 md:px-24 py-12 shadow-2xl shadow-black/50 relative z-10`}
+        >
+          <Link
+            href={"/"}
+            className={`${s.logo} hover:opacity-80 transition-opacity mb-20 tracking-tight`}
+          >
+            <Image src={"./Logo.svg"} width={40} height={40} alt="Logo" />
+            <h5 style={font.style} className="text-black  text-lg">
+              Tax<span className="text-blue ">Pal</span>
+            </h5>
+          </Link>
+          <h5 className="text-black text-lg font-semibold mb-2">
+            Sign in to your account
+          </h5>
+          <form className="w-full mt-20" onSubmit={handleSubmit}>
+            <Input
+              style={{ fontSize: "16px" }}
+              fullWidth
+              type="email"
+              label="Email"
+              labelPlacement={"outside"}
+              placeholder=" "
+              radius="sm"
+              color="primary"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              classNames={{
+                innerWrapper: "bg-transparent",
+                inputWrapper: [
+                  "text-blue",
+                  "bg-slate-100",
+                  "border-1",
+                  "border-gray/20",
+                ],
+                label: ["text-sm", "font-normal", "text-slate-500"],
+              }}
+              className=""
+            />
+            <Input
+              style={{ fontSize: "16px" }}
+              color="primary"
+              endContent={
+                <button type="button" onClick={() => setIsVisible(!isVisible)}>
+                  {isVisible ? (
+                    <IoEyeOffOutline color={"#64748B"} />
+                  ) : (
+                    <IoEyeOutline color={"#64748B"} />
+                  )}
+                </button>
+              }
+              fullWidth
+              type={isVisible ? "text" : "password"}
+              label="Password"
+              labelPlacement={"outside"}
+              placeholder=" "
+              radius="sm"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              classNames={{
+                inputWrapper: [
+                  "text-blue",
+                  "bg-slate-100",
+                  "border-1",
+                  "border-gray/20",
+                  "hover:bg-default-200/70",
+                ],
+                label: ["text-sm", "font-normal", "text-slate-500"],
+              }}
+              className=""
+            />
+            
+            {error && (
+              <div className="text-red-600 text-sm text-center mt-4 mb-4">
+                {error}
+              </div>
+            )}
 
-          {error && (
-            <div className="text-red-600 text-sm text-center">{error}</div>
-          )}
-
-          <div>
-            <button
+            <Button
+              fullWidth
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              className={`${s.submitBtn} bg-blue text-white font-semibold shadow-md tracking-tight disabled:opacity-50 disabled:cursor-not-allowed`}
+              radius="full"
             >
-              {loading ? "Signing in..." : "Sign in"}
-            </button>
-          </div>
+              {loading ? "Signing in..." : "Sign In"}
+              {!loading && <GoArrowRight size={16} />}
+            </Button>
+          </form>
+        </div>
+        <figure className="hidden lg:block w-full h-screen z-0 bg-[url('/bgSignIn.svg')] bg-no-repeat bg-center bg-cover"></figure>
+      </section>
+    </section>
+  );
+};
 
-          <div className="text-center">
-            <Link href="/" className="text-indigo-600 hover:text-indigo-500">
-              Back to home
-            </Link>
-          </div>
-        </form>
-      </div>
-    </div>
-  )
-}
+export default SignIn;

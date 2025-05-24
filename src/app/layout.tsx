@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AuthSessionProvider from "@/components/SessionProvider";
+import { HeroUIProviders } from "@/components/HeroUIprovider";
+import { Header } from "@/components/Header/header";
+import { Footer } from "@/components/Footer/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,12 +28,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body 
+      <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AuthSessionProvider>
-          {children}
-        </AuthSessionProvider>
+        <HeroUIProviders>
+          <AuthSessionProvider>
+            <Header />
+            {children}
+            <Footer />
+            </AuthSessionProvider>
+        </HeroUIProviders>
       </body>
     </html>
   );
