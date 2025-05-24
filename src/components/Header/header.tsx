@@ -21,7 +21,7 @@ import {
 import { Link as ScrollLink } from "react-scroll";
 // Font
 import { Lexend } from "next/font/google";
-import { BannerAdvertising } from "../ui/banners/bannerAdvertising";
+// import { BannerAdvertising } from "../ui/banners/bannerAdvertising";
 const font = Lexend({
   subsets: ["latin"],
   weight: ["500"],
@@ -29,7 +29,7 @@ const font = Lexend({
 
 export const Header: FC = ({}) => {
   const pathName = usePathname().replace("/", "");
-  let hideNavigation = pathName === "signIn" || pathName === "signUp";
+  const hideNavigation = pathName === "signIn" || pathName === "signUp";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScroll, setScroll] = useState(false);
 
@@ -46,6 +46,7 @@ export const Header: FC = ({}) => {
     { value: "Pricing", href: "price" },
     { value: "FAQ", href: "faq" },
   ];
+
   // SetScroll
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -56,6 +57,7 @@ export const Header: FC = ({}) => {
       }
     });
   }, [isScroll]);
+
   // Animation
   const animation = {
     hidden: {
@@ -76,7 +78,7 @@ export const Header: FC = ({}) => {
               isScroll ? "shadow-sm shadow-black/10" : ""
             }  `}
             isBlurred={!isMenuOpen}
-            shouldHideOnScroll
+            position="sticky"
             disableAnimation
             onMenuOpenChange={setIsMenuOpen}
             isMenuOpen={isMenuOpen}

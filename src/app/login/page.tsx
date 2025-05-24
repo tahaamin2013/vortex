@@ -63,7 +63,7 @@ const SignIn: FC = ({}) => {
     >
       <section className={`${s.wrapper}  `}>
         <div
-          className={`${s.wrapperForm} h-screen bg-white px-5 md:px-24 py-12 shadow-2xl shadow-black/50 relative z-10`}
+          className={`${s.wrapperForm} h-screen bg-white px-5 md:px-24 py-12 relative z-10`}
         >
           <Link
             href={"/"}
@@ -71,7 +71,7 @@ const SignIn: FC = ({}) => {
           >
             <Image src={"./Logo.svg"} width={40} height={40} alt="Logo" />
             <h5 style={font.style} className="text-black  text-lg">
-              Tax<span className="text-blue ">Pal</span>
+              Vor<span className="text-blue ">tex</span>
             </h5>
           </Link>
           <h5 className="text-black text-lg font-semibold mb-2">
@@ -146,7 +146,7 @@ const SignIn: FC = ({}) => {
               fullWidth
               type="submit"
               disabled={loading}
-              className={`${s.submitBtn} bg-blue text-white font-semibold shadow-md tracking-tight disabled:opacity-50 disabled:cursor-not-allowed`}
+              className={`${s.submitBtn} bg-blue text-white font-semibold shadow-sm tracking-tight disabled:opacity-50 disabled:cursor-not-allowed`}
               radius="full"
             >
               {loading ? "Signing in..." : "Sign In"}
