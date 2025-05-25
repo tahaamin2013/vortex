@@ -109,7 +109,7 @@ export const Reviews: FC = ({}) => {
               variants={animation}
               className="text-lg max-w-screen-md m-auto leading-8 text-slate-700 tracking-tight"
             >
-              Our software is so simple that people can’t help but fall in love
+              Our software is so simple that people can&apos;t help but fall in love
               with it. Simplicity is easy when you just skip tons of
               mission-critical features.
             </motion.p>

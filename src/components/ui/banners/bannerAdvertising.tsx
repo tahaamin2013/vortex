@@ -35,14 +35,14 @@ export const BannerAdvertising: FC = ({}) => {
               <span className="relative font-normal after:content-['.'] after:absolute after:bottom-0.5 mr-2 after:-right-1">
                 Vortex {getFullYear}{" "}
               </span>
-              Join us in Denver from June 7 – 9 to see what’s coming next.
+              Join us in Denver from June 7 - 9 to see what&apos;s coming next.
             </h5>
             <Link
               href={"signUp"}
-              className="text-blue bg-white rounded-full pl-3 pr-7 py-1 text-xs font-normal relative "
+              className="text-bluecustom bg-white rounded-full pl-3 pr-7 py-1 text-xs font-normal relative "
             >
               Register now
-              <GoArrowRight size={14} className=" absolute top-1.5 right-3 " />
+              <GoArrowRight size={14} className="absolute top-1.5 right-3" />
             </Link>
           </section>
           <button

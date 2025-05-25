@@ -30,7 +30,7 @@ const font = Lexend({
 
 export const Header: FC = ({}) => {
   const pathName = usePathname().replace("/", "");
-  const hideNavigation = pathName === "signIn" || pathName === "signUp";
+  const hideNavigation = pathName === "login" || pathName === "dashboard";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScroll, setScroll] = useState(false);
 
@@ -110,13 +110,13 @@ export const Header: FC = ({}) => {
                       alt="Logo"
                     />
                     <h5 style={font.style} className="text-black  text-lg">
-                      Vor<span className="text-blue ">tex</span>
+                      Vor<span className="text-bluecustom">tex</span>
                     </h5>
                   </ScrollLink>
                   <ul className="hidden md:grid">
                     {DATA_LINKS.map((link, i) => (
                       <ScrollLink
-                        className={`transition-all text-sm  hover:text-blue hover:bg-slate-100 px-3 py-2 rounded-lg cursor-pointer`}
+                        className={`transition-all text-sm  hover:text-bluecustom hover:bg-slate-100 px-3 py-2 rounded-lg cursor-pointer`}
                         activeStyle={{
                           backgroundColor: "#f1f5f9",
                           color: "#2563EB",
@@ -134,14 +134,14 @@ export const Header: FC = ({}) => {
                 </nav>
                 <div className={s.actions}>
                   <Link
-                    className="hidden md:inline-block transition-all text-sm text-slate-700 hover:text-blue hover:bg-slate-100 px-3 py-2 rounded-lg"
-                    href={"/signIn"}
+                    className="hidden md:inline-block transition-all text-sm text-slate-700 hover:text-bluecustom hover:bg-slate-100 px-3 py-2 rounded-lg"
+                    href={"/login"}
                   >
                     Sign In
                   </Link>
                   <Button
                     as={Link}
-                    className="bg-blue text-white py-2 px-3 rounded-full text-sm font-medium hover:bg-white hover:text-blue  transition-all border-2 border-blue shadow-md"
+                    className="bg-bluecustom text-white py-2 px-3 rounded-full text-sm font-medium hover:bg-white hover:text-bluecustom transition-all border-2 border-bluecustom shadow-md"
                     href={"/signUp"}
                   >
                     Get started{" "}

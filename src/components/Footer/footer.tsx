@@ -39,7 +39,7 @@ export const Footer: FC = ({}) => {
               >
                 <Image src={"./Logo.svg"} width={40} height={40} alt="Logo" />
                 <h5 className="text-black font-semibold text-lg">
-                  Vor<span className="text-blue ">tex</span>
+                  Vor<span className="text-bluecustom">tex</span>
                 </h5>
               </ScrollLink>
               <nav className={`${s.nav}`}>
@@ -50,7 +50,7 @@ export const Footer: FC = ({}) => {
                     duration={800}
                     to={link.href}
                     key={i}
-                    className="transition-all text-sm text-slate-700 hover:text-blue hover:bg-slate-100 px-3 py-2 rounded-lg"
+                    className="transition-all text-sm text-slate-700 hover:text-bluecustom hover:bg-slate-100 px-3 py-2 rounded-lg"
                     href={link.href}
                   >
                     {link.value}

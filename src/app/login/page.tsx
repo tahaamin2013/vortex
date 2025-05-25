@@ -71,7 +71,7 @@ const SignIn: FC = ({}) => {
           >
             <Image src={"./Logo.svg"} width={40} height={40} alt="Logo" />
             <h5 style={font.style} className="text-black  text-lg">
-              Vor<span className="text-blue ">tex</span>
+              Vor<span className="text-bluecustom">tex</span>
             </h5>
           </Link>
           <h5 className="text-black text-lg font-semibold mb-2">
@@ -93,7 +93,7 @@ const SignIn: FC = ({}) => {
               classNames={{
                 innerWrapper: "bg-transparent",
                 inputWrapper: [
-                  "text-blue",
+                  "text-bluecustom",
                   "bg-slate-100",
                   "border-1",
                   "border-gray/20",
@@ -125,7 +125,7 @@ const SignIn: FC = ({}) => {
               required
               classNames={{
                 inputWrapper: [
-                  "text-blue",
+                  "text-bluecustom",
                   "bg-slate-100",
                   "border-1",
                   "border-gray/20",

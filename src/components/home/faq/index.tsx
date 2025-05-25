@@ -111,8 +111,8 @@ export const FAQ: FC = ({}) => {
               variants={animation}
               className="text-lg max-w-screen-sm leading-8 text-slate-700 tracking-tight"
             >
-              If you can’t find what you’re looking for, email our support team
-              and if you’re lucky someone will get back to you.
+              If you can&apos;t find what you&apos;re looking for, email our support team
+              and if you&apos;re lucky someone will get back to you.
             </motion.p>
           </motion.div>
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
