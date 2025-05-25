@@ -16,7 +16,7 @@ import { Tooltip } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
 export const Footer: FC = ({}) => {
   const pathName = usePathname().replace("/", "");
-  const hideFooter = pathName === "login" || pathName === "dashboard";
+  const hideFooter = pathName === "/login" || pathName.startsWith("dashboard");
   const getFullYear = new Date().getFullYear();
   const DATA_LINKS = [
     { value: "Features", href: "features" },

@@ -30,7 +30,7 @@ const font = Lexend({
 
 export const Header: FC = ({}) => {
   const pathName = usePathname().replace("/", "");
-  const hideNavigation = pathName === "login" || pathName === "dashboard";
+  const hideNavigation = pathName === "login" || pathName.startsWith("dashboard");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScroll, setScroll] = useState(false);
 

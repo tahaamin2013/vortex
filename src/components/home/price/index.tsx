@@ -13,7 +13,7 @@ export default function PricingSection() {
         period: "/14 days",
         buttonText: "Start Free Trial",
         features: [
-          "Get full access to Vertox software for 14 days.",
+          "Get full access to Onsite software for 14 days.",
           "Dedicated work workspace"
         ]
       },
