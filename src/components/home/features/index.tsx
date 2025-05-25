@@ -22,22 +22,22 @@ export const Features: FC = ({}) => {
     {
       title: "Payroll",
       text: "Keep track of everyone's salaries and whether or not they've been paid. Direct deposit not supported.",
-      img: "/Images/HomePage/features/Tab1.webp",
+      img: "/images/HomePage/features/Tab1.webp",
     },
     {
       title: "Claim expenses",
       text: "All of your receipts organized into one place, as long as you don't mind typing in the data by hand.",
-      img: "/Images/HomePage/features/Tab2.webp",
+      img: "/images/HomePage/features/Tab2.webp",
     },
     {
       title: "VAT handling",
       text: "We only sell our software to companies who don't deal with VAT at all, so technically we do all the VAT stuff they need.",
-      img: "/Images/HomePage/features/Tab3.webp",
+      img: "/images/HomePage/features/Tab3.webp",
     },
     {
       title: "Reporting",
       text: "Easily export your data into an Excel spreadsheet where you can do whatever the hell you want with it.",
-      img: "/Images/HomePage/features/Tab4.webp",
+      img: "/images/HomePage/features/Tab4.webp",
     },
   ];
   // Animation
@@ -58,7 +58,7 @@ export const Features: FC = ({}) => {
       className={`${s.features} relative py-20 sm:py-32 overflow-hidden`}
     >
       <Image
-        src={"/Images/HomePage/features/bgFeatures.svg"}
+        src={"/images/HomePage/features/bgFeatures.svg"}
         width={1000}
         height={1000}
         alt="Bg"
