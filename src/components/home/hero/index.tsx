@@ -85,7 +85,7 @@ export const Hero: FC = ({}) => {
             >
               <ButtonLink
                 size="md"
-                value="Get 6 months free"
+                value="Get 14 days free"
                 styles=" shadow-md bg-black text-white font-medium rounded-full mr-5"
                 href="/signUp"
               />
@@ -93,7 +93,7 @@ export const Hero: FC = ({}) => {
               <Button
                 target="blank"
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                className=" shadow-sm bg-white border-1 border-slate-200 rounded-full text-black font-medium"
+                className="shadow-sm bg-white border-1 border-slate-200 rounded-full text-black font-medium"
                 as={Link}
               >
                 <FaPlay size={12} color={"#2563EB"} />

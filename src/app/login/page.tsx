@@ -146,8 +146,8 @@ const SignIn: FC = ({}) => {
               fullWidth
               type="submit"
               disabled={loading}
-              className={`${s.submitBtn} bg-blue text-white font-semibold shadow-sm tracking-tight disabled:opacity-50 disabled:cursor-not-allowed`}
-              radius="full"
+              className={`${s.submitBtn} bg-bluecustom text-white font-semibold shadow-sm tracking-tight disabled:opacity-50 disabled:cursor-not-allowed`}
+              radius="sm"
             >
               {loading ? "Signing in..." : "Sign In"}
               {!loading && <GoArrowRight size={16} />}
