@@ -4,7 +4,7 @@ import { TestimonialsSection } from "@/components/testimonials"
 import { NewReleasePromo } from "@/components/new-release-promo"
 import { FAQSection } from "@/components/faq-section"
 import { PricingSection } from "@/components/pricing-section"
-import { StickyFooter } from "@/components/sticky-footer"
+
 import HomePage from "@/components/Herosection"
 
 export default function Home() {
@@ -290,7 +290,7 @@ export default function Home() {
       </div>
 
       {/* Sticky Footer */}
-      <StickyFooter />
+
     </div>
   )
 }
