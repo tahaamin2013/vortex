@@ -4,6 +4,9 @@ import type React from "react"
 import { useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { signIn } from "next-auth/react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 
 export function SignInForm() {
   const router = useRouter()
@@ -40,21 +43,21 @@ export function SignInForm() {
   return (
     <div className="w-full max-w-md mx-auto">
       <div className="mb-8 text-center animate-fade-in-up">
-        <h1 className="text-4xl font-bold mb-2 text-balance text-white">Welcome back to Control Media</h1>
-        <p className="text-gray-400 text-pretty">Sign in to continue to your dashboard.</p>
+        <h1 className="text-4xl font-bold mb-2 text-balance">Welcome Back</h1>
+        <p className="text-muted-foreground text-pretty">Sign in to continue your journey</p>
       </div>
 
-      <div className="bg-black border-2 border-orange-500/20 rounded-xl p-8 shadow-[0_0_40px_rgba(255,119,0,0.15)] animate-fade-in-up [animation-delay:100ms]">
+      <div className="bg-card border border-border rounded-lg p-8 shadow-2xl animate-fade-in-up [animation-delay:100ms]">
         <form onSubmit={onSubmit} className="space-y-6">
           <div className="space-y-2 group">
-            <label
+            <Label
               htmlFor="email"
-              className="block text-sm font-medium text-white transition-colors duration-200 group-focus-within:text-orange-500"
+              className="text-sm font-medium transition-colors duration-200 group-focus-within:text-primary"
             >
               Email
-            </label>
+            </Label>
             <div className="relative">
-              <input
+              <Input
                 id="email"
                 name="email"
                 type="email"
@@ -62,10 +65,10 @@ export function SignInForm() {
                 required
                 onFocus={() => setFocusedField("email")}
                 onBlur={() => setFocusedField(null)}
-                className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg text-white placeholder:text-gray-500 transition-all duration-300 focus:outline-none focus:border-orange-500 focus:shadow-[0_0_0_3px_rgba(255,119,0,0.1)] focus:scale-[1.01]"
+                className="bg-input border-border text-foreground placeholder:text-muted-foreground transition-all duration-300 focus:border-primary focus:shadow-[0_0_0_3px_rgba(255,119,0,0.1)] focus:scale-[1.01]"
               />
               <div
-                className={`absolute bottom-0 left-0 h-0.5 bg-orange-500 transition-all duration-300 ${
+                className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
                   focusedField === "email" ? "w-full" : "w-0"
                 }`}
               />
@@ -73,14 +76,14 @@ export function SignInForm() {
           </div>
 
           <div className="space-y-2 group">
-            <label
+            <Label
               htmlFor="password"
-              className="block text-sm font-medium text-white transition-colors duration-200 group-focus-within:text-orange-500"
+              className="text-sm font-medium transition-colors duration-200 group-focus-within:text-primary"
             >
               Password
-            </label>
+            </Label>
             <div className="relative">
-              <input
+              <Input
                 id="password"
                 name="password"
                 type="password"
@@ -88,10 +91,10 @@ export function SignInForm() {
                 placeholder="••••••••"
                 onFocus={() => setFocusedField("password")}
                 onBlur={() => setFocusedField(null)}
-                className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg text-white placeholder:text-gray-500 transition-all duration-300 focus:outline-none focus:border-orange-500 focus:shadow-[0_0_0_3px_rgba(255,119,0,0.1)] focus:scale-[1.01]"
+                className="bg-input border-border text-foreground placeholder:text-muted-foreground transition-all duration-300 focus:border-primary focus:shadow-[0_0_0_3px_rgba(255,119,0,0.1)] focus:scale-[1.01]"
               />
               <div
-                className={`absolute bottom-0 left-0 h-0.5 bg-orange-500 transition-all duration-300 ${
+                className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
                   focusedField === "password" ? "w-full" : "w-0"
                 }`}
               />
@@ -99,18 +102,18 @@ export function SignInForm() {
           </div>
 
           {error && (
-            <div className="bg-red-500/10 border border-red-500/20 rounded-md p-3 animate-shake">
-              <p className="text-sm text-red-400">{error}</p>
+            <div className="bg-destructive/10 border border-destructive/20 rounded-md p-3 animate-shake">
+              <p className="text-sm text-destructive">{error}</p>
             </div>
           )}
 
-          <button
+          <Button
             type="submit"
-            className="w-full px-4 py-3 bg-orange-500 text-white font-medium rounded-lg transition-all duration-300 hover:bg-orange-600 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,119,0,0.4)] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,119,0,0.3)] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             disabled={loading}
           >
             {loading ? (
-              <span className="flex items-center justify-center gap-2">
+              <span className="flex items-center gap-2">
                 <svg
                   className="animate-spin h-4 w-4"
                   xmlns="http://www.w3.org/2000/svg"
@@ -129,29 +132,20 @@ export function SignInForm() {
             ) : (
               "Sign in"
             )}
-          </button>
+          </Button>
         </form>
 
         <div className="mt-6 text-center animate-fade-in-up [animation-delay:200ms]">
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-muted-foreground">
             Don't have an account?{" "}
             <a
               href="/signup"
-              className="text-orange-500 hover:text-orange-400 hover:underline transition-all duration-200 font-medium"
+              className="text-primary hover:underline transition-all duration-200 hover:text-primary/80"
             >
               Create account
             </a>
           </p>
         </div>
-      </div>
-
-      <div className="mt-4 text-center animate-fade-in-up [animation-delay:300ms]">
-        <p className="text-xs text-gray-500">
-          New here?{" "}
-          <a href="/signup" className="text-orange-500 hover:text-orange-400 underline transition-all duration-200">
-            Create an account
-          </a>
-        </p>
       </div>
     </div>
   )
