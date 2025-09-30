@@ -6,6 +6,7 @@ import { FAQSection } from "@/components/faq-section"
 import { PricingSection } from "@/components/pricing-section"
 
 import HomePage from "@/components/Herosection"
+import { VideoGuideSection } from "@/components/video-guide"
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -44,7 +45,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen w-full relative bg-black">
+    <div className="min-h-screen w-full overflow-x-hidden relative bg-black">
       {/* Pearl Mist Background with Top Glow */}
       <div
         className="absolute inset-0 z-0"
@@ -278,7 +279,7 @@ export default function Home() {
       <div id="pricing">
         <PricingSection />
       </div>
-
+<VideoGuideSection />
       {/* Testimonials Section */}
     
 

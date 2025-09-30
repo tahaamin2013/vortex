@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next"
 import AuthSessionProvider from "@/components/auth/session-provider"
 import { Suspense } from "react"
 import "./globals.css"
+import Footer from "@/components/Footer"
 
 export const metadata: Metadata = {
   title: "Control Media - Connect with Customers Everywhere",
@@ -21,10 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className={`font-sans overflow-x-hidden ${GeistSans.variable} ${GeistMono.variable}`}>
         <Suspense fallback={<div>Loading...</div>}>
           <AuthSessionProvider>{children}</AuthSessionProvider>
         </Suspense>
+        <Footer />
         <Analytics />
       </body>
     </html>

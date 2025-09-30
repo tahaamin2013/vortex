@@ -76,13 +76,13 @@ const TestimonialCard = ({
     <div className="relative w-full max-w-xs overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-white/[0.02] p-10 shadow-[0px_2px_0px_0px_rgba(255,255,255,0.1)_inset]">
       <div className="absolute -top-5 -left-5 -z-10 h-40 w-40 rounded-full bg-gradient-to-b from-[#e78a53]/10 to-transparent blur-md"></div>
 
-      <div className="text-white/90 leading-relaxed">{body}</div>
+      <div className="/90 leading-relaxed">{body}</div>
 
       <div className="mt-5 flex items-center gap-2">
         <img src={img || "/placeholder.svg"} alt={name} height="40" width="40" className="h-10 w-10 rounded-full" />
         <div className="flex flex-col">
-          <div className="leading-5 font-medium tracking-tight text-white">{name}</div>
-          <div className="leading-5 tracking-tight text-white/60">{username}</div>
+          <div className="leading-5 font-medium tracking-tight ">{name}</div>
+          <div className="leading-5 tracking-tight /60">{username}</div>
         </div>
       </div>
     </div>
@@ -101,12 +101,13 @@ export function TestimonialsSection() {
             >
               <div className="absolute inset-x-0 -top-px mx-auto h-0.5 w-1/2 bg-gradient-to-r from-transparent via-[#e78a53] to-transparent shadow-2xl transition-all duration-500 group-hover:w-3/4"></div>
               <div className="absolute inset-x-0 -bottom-px mx-auto h-0.5 w-1/2 bg-gradient-to-r from-transparent via-[#e78a53] to-transparent shadow-2xl transition-all duration-500 group-hover:h-px"></div>
-              <span className="relative text-white">Testimonials</span>
+              <span className="relative ">Testimonials</span>
             </button>
           </div>
-          <h2 className="from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 mt-5 bg-gradient-to-r bg-clip-text text-center text-4xl font-semibold tracking-tighter text-transparent md:text-[54px] md:leading-[60px] __className_bb4e88 relative z-10">
-            What our users say
-          </h2>
+  <h2 className="mt-5 text-center text-4xl font-semibold tracking-tighter text-white md:text-[54px] md:leading-[60px] relative z-10">
+  What our users say
+</h2>
+
 
           <p className="mt-5 relative z-10 text-center text-lg text-zinc-500">
             From intuitive design to powerful features, our app has become an essential tool for users around the world.
@@ -140,7 +141,7 @@ export function TestimonialsSection() {
         </div>
 
         <div className="-mt-8 flex justify-center">
-          <button className="group relative inline-flex items-center gap-2 rounded-full border border-[#e78a53]/30 bg-black/50 px-6 py-3 text-sm font-medium text-white transition-all hover:border-[#e78a53]/60 hover:bg-[#e78a53]/10 active:scale-95">
+          <button className="group relative inline-flex items-center gap-2 rounded-full border border-[#e78a53]/30 bg-black/50 px-6 py-3 text-sm font-medium  transition-all hover:border-[#e78a53]/60 hover:bg-[#e78a53]/10 active:scale-95">
             <div className="absolute inset-x-0 -top-px mx-auto h-px w-3/4 bg-gradient-to-r from-transparent via-[#e78a53]/40 to-transparent"></div>
             <div className="absolute inset-x-0 -bottom-px mx-auto h-px w-3/4 bg-gradient-to-r from-transparent via-[#e78a53]/40 to-transparent"></div>
             <svg className="h-4 w-4 text-[#e78a53]" fill="currentColor" viewBox="0 0 24 24">
