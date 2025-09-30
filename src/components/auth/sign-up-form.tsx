@@ -46,7 +46,7 @@ export function SignUpForm() {
       } else {
         router.push("/dashboard")
       }
-    } catch (err) {
+    } catch  {
       setError("Unexpected error")
     } finally {
       setLoading(false)

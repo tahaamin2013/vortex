@@ -1,6 +1,5 @@
 "use client"
 import { useState, useEffect } from "react"
-import Features from "@/components/features"
 import { TestimonialsSection } from "@/components/testimonials"
 import { NewReleasePromo } from "@/components/new-release-promo"
 import { FAQSection } from "@/components/faq-section"

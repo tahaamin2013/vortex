@@ -22,7 +22,7 @@ export async function POST(req: Request) {
     })
 
     return NextResponse.json({ user })
-  } catch (e) {
+  } catch  {
     return NextResponse.json({ error: "Registration failed" }, { status: 500 })
   }
 }

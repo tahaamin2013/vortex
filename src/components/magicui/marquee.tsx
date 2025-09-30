@@ -10,7 +10,7 @@ interface MarqueeProps {
   children?: ReactNode
   vertical?: boolean
   repeat?: number
-  [key: string]: any
+  [key: string]: string | number | boolean | ReactNode | undefined
 }
 
 export function Marquee({

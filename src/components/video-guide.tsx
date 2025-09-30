@@ -7,7 +7,7 @@ export function VideoGuideSection() {
         {/* Header */}
         <h2 className="text-4xl md:text-5xl font-black text-white mb-6">See Control Media at Work: A Video Guide</h2>
         <p className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto">
-          Streamline your team's workflow with real-time collaboration and effortless task management.
+          Streamline your teams workflow with real-time collaboration and effortless task management.
         </p>
 
         {/* Video Preview */}

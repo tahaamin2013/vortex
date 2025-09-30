@@ -18,6 +18,7 @@ export default function Features() {
   const [isCliHovering, setIsCliHovering] = useState(false)
   const [isFeature3Hovering, setIsFeature3Hovering] = useState(false)
   const [isFeature4Hovering, setIsFeature4Hovering] = useState(false)
+  console.log(isCliHovering,isFeature3Hovering,isFeature4Hovering)
   const [inputValue, setInputValue] = useState("")
 
   const [baseColor, setBaseColor] = useState<[number, number, number]>([0.906, 0.541, 0.325]) // #e78a53 in RGB normalized

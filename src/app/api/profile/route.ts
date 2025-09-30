@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server"
 
-let cache: any = null
+let cache: null = null
 
 export async function GET() {
   const defaultProfile = {

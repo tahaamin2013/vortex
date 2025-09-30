@@ -1,13 +1,13 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Menu } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { LineShadowText } from "@/components/line-shadow-text"
 import { ShimmerButton } from "@/components/shimmer-button"
 import { useState } from "react"
 
 export default function HomePage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const mobileMenuOpen = useState(false)
 
   return (
     <div className="pt-40 -mt-[100px] pb-20  w-screen mb-8 relative overflow-hidden">
