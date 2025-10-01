@@ -10,7 +10,7 @@ export default function AIHubPage() {
         <div>
           <h2 className="text-2xl font-bold tracking-tight text-white">AI Hub</h2>
           <p className="mt-1 text-sm text-gray-400">
-            Provide your AI Agent with your company's knowledge so it can automatically answer customers with accurate
+            Provide your AI Agent with your company knowledge so it can automatically answer customers with accurate
             and relevant information. Only English articles supported.{" "}
             <a href="#" className="text-[oklch(0.65_0.18_40)] hover:underline">
               Learn more
