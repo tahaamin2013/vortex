@@ -137,7 +137,7 @@ export function SignInForm() {
 
         <div className="mt-6 text-center animate-fade-in-up [animation-delay:200ms]">
           <p className="text-sm text-muted-foreground">
-            Don't have an account?{" "}
+            Dont have an account?{" "}
             <a
               href="/signup"
               className="text-primary hover:underline transition-all duration-200 hover:text-primary/80"
